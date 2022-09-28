@@ -67,7 +67,7 @@ const GuestPage = () => {
         </ScrollView>
     )
 }
-
+//tester
 // Brugeren føres fra ovenstående til Appens forside/hjemskærm, når de er logget ind
 return user.loggedIn ? <HomeScreen/> : <GuestPage/>;
 
