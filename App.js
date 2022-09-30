@@ -32,6 +32,7 @@ const [user, setUser] = useState({ loggedIn: false });
         firebase.initializeApp(firebaseConfig);
     }
 
+// Monitorerer om brugeren er logget ind eller ej
 function onAuthStateChange(callback) {
     return firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -67,7 +68,7 @@ const GuestPage = () => {
         </ScrollView>
     )
 }
-//tester
+
 // Brugeren føres fra ovenstående til Appens forside/hjemskærm, når de er logget ind
 return user.loggedIn ? <HomeScreen/> : <GuestPage/>;
 

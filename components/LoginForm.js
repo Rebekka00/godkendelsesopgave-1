@@ -3,12 +3,14 @@ import {Button, Text, View, TextInput, ActivityIndicator, StyleSheet, TouchableO
 import { initializeApp } from "firebase/app";
 import firebase from "firebase/compat";
 
+// De variabler der benyttes til at logge ind
 function LoginForm() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isCompleted, setCompleted] = useState(false)
     const [errorMessage, setErrorMessage] = useState(null)
 
+    // Bruger forsøger at logge ind og firebase tjekker om brugerens data findes, hvis ikke gives en errormessage
     const handleSubmit = async () => {
         try {
             await firebase.auth().signInWithEmailAndPassword(email, password).then((data)=>{
@@ -19,11 +21,13 @@ function LoginForm() {
         }
     }
 
+    // Login knap
     const renderButton = () => {
         return <Button onPress={() => handleSubmit()} title="Login her!"/>;
 
     };
 
+    // De to øverste skaber inputfelterne til at taste e-mail og kodeord, den nederste giver errormessage
     return (
         <View>
             <Text style={styles.header}>Login</Text>
@@ -48,6 +52,7 @@ function LoginForm() {
     );
 }
 
+// Styling
 const styles = StyleSheet.create({
     error: {
         color: 'red',
