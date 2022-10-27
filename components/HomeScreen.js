@@ -6,6 +6,7 @@ import ProfileScreen from "./ProfileScreen";
 //import SignUpForm from "./SignUpForm";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {createStackNavigator} from "@react-navigation/stack";
+import Events from "./Events";
 
 const navController = (navigation, route) => {
     navigation.navigate(route)
@@ -19,6 +20,7 @@ const StackNavigation = () => {
         <Stack.Navigator>
             <Stack.Screen name="HomeScreen" component={HomeScreen}/>
             <Stack.Screen name="FullEventPage" component={FullEventPage}/>
+            <Stack.Screen name="Events" component={Events}/>
         </Stack.Navigator>
     );
 }
@@ -47,6 +49,7 @@ export default function Nav() {
         <NavigationContainer>
             <Tab.Navigator>
                 <Tab.Screen name="Home" component={StackNavigation}/>
+                <Stack.Screen name="Events" component={Events}/>
                 <Tab.Screen name="Profile" component={ProfileScreen}/>
             </Tab.Navigator>
         </NavigationContainer>

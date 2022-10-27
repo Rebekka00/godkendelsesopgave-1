@@ -7,10 +7,12 @@ import ProfileScreen from "./components/ProfileScreen";
 import HomeScreen from "./components/HomeScreen";
 import SignUpForm from "./components/SignUpForm";
 import LoginForm from "./components/LoginForm";
-// import StackNavigator from "./components/StackNavigator";
+import StackNavigator from "./components/StackNavigator";
 import { Card } from 'react-native-paper';
 import firebase from "firebase/compat";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import Events from "./components/Events";
+import Create from "./components/Create";
 
 // Her er Appens Firebase configuration
 const firebaseConfig = {
@@ -76,7 +78,8 @@ return user.loggedIn ? <HomeScreen/> : <GuestPage/>;
         return (
             <NavigationContainer>
                 <Tab.Navigator>
-                    <Tab.Screen name="Home" component={StackNavigation}/>
+                    <Tab.Screen name="Home" component={StackNavigator}/>
+                    <Tab.Screen name="Events" component={Events}/>
                     <Tab.Screen name="Profile" component={ProfileScreen}/>
                 </Tab.Navigator>
             </NavigationContainer>

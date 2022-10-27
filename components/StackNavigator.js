@@ -3,6 +3,8 @@ import * as React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
 import HomeScreen from "./HomeScreen";
 import FullEventPage from "./stackComponents/FullEventPage";
+import Create from "./Create";
+import Events from "./Events";
 
 // Her bliver StackNavigator initialiseret
 const Stack = createStackNavigator();
@@ -14,6 +16,7 @@ function StackNavigator() {
         <Stack.Navigator>
             <Stack.Screen name="HomeScreen" component={HomeScreen}/>
             <Stack.Screen name="FullEventPage" component={FullEventPage}/>
+            <Stack.Screen name="Create" component={FullEventPage}/>
         </Stack.Navigator>
     );
 }
